@@ -1,7 +1,7 @@
 function checkAnswer(userAnswer) {
-    const correctAnswer = "4";
-    const selectedOption = document.querySelector('input[name="quiz"]:checked')
-    
+    const corretAnswer = "4";
+    const selectedOption = document.querySelector('input{name="quiz"]:checked');
+
     if (userAnswer === correctAnswer) {
         console.log("Correct! Well done.");
     } else {
@@ -9,4 +9,7 @@ function checkAnswer(userAnswer) {
     }
 }
 
-document.getElementById("submit-answer");
+document.getElementById("submit-answer").addEventListener('click', () => {
+    const userAnswer = document.querySelector('input[name="quiz"]:checked')?.value;
+    checkAnswer(userAnswer);
+})
